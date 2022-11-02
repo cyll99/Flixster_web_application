@@ -102,6 +102,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Default.aspx" />
+    <Content Include="Detail.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -111,6 +112,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -10,7 +10,7 @@ namespace Flixster
 {
     public partial class Default : System.Web.UI.Page
     {
-        int index = 0;
+        public static int index = 0;
         public static List<Film> listFilm;
         public Film currentFilm;
         public delegate void delPassFilm(Film film);
@@ -19,6 +19,10 @@ namespace Flixster
         protected void Page_Load(object sender, EventArgs e)
         {
             SqliteDataAccess.CreateIfNotExists();
+
+            listFilm = Utilities.getMovieDbList();
+            foreach (Film film in listFilm)
+                SqliteDataAccess.SaveFilm(film);
             afficher(index);
             //changeColor();
         }
@@ -41,7 +45,7 @@ namespace Flixster
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_suivant_Click(object sender, EventArgs e)
         {
             index += 1;
             afficher(index);
@@ -62,12 +66,12 @@ namespace Flixster
                 listFilm = Utilities.getMovieDbList();
                 Film film = listFilm.ElementAt(index);
                 currentFilm = film;
-                SqliteDataAccess.SaveFilm(film);
+                //SqliteDataAccess.SaveFilm(film);
 
                 lbl_title.Text = film.title;
                 label1.Text = film.overview;
                 //label1.MaximumSize = new Size(50, 0);
-                //pictureBox1.LoadAsync("https://image.tmdb.org/t/p/w342" + film.backdrop_path);
+                pictureBox1.ImageUrl = ("https://image.tmdb.org/t/p/w342" + film.backdrop_path);
             }
             else
             {// films from database
@@ -77,21 +81,23 @@ namespace Flixster
                 lbl_title.Text = film.title;
                 label1.Text = film.overview;
                 //label1.MaximumSize = new Size(50, 0);
-                //pictureBox1.Image = film.image;
+                //pictureBox1.  (film.image);
             }
 
-            //if (index > 0)
-            //    btn_precedent.Enabled = true;
-            //else
-            //    btn_precedent.Enabled = false;
+            if (index > 0)
+                btn_precedent.Enabled = true;
+            else
+                btn_precedent.Enabled = false;
 
 
-            //if (index == listFilm.Count - 1)
-            //    btn_suivant.Enabled = false;
-            //else
-            //    btn_suivant.Enabled = true;
+            if (index == listFilm.Count - 1)
+                btn_suivant.Enabled = false;
+            else
+                btn_suivant.Enabled = true;
 
         }
+
+
         /// <summary>
         /// send user to detail page
         /// </summary>
