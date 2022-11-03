@@ -13,7 +13,6 @@ namespace Flixster
         public static int index = 0;
         public static List<Film> listFilm;
         public delegate void delPassFilm(Film film);
-        Graphics formGraphics;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -58,7 +57,7 @@ namespace Flixster
                 Film film = listFilm.ElementAt(index);
                 lbl_title.Text = film.title;
                 label1.Text = film.overview;
-                
+                pictureBox1.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(film.image);
             }
 
             if (index > 0)

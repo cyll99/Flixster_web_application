@@ -62,7 +62,7 @@ namespace Flixster
 
                         Image newImage = byteArrayToImage(image_byte);
 
-                        film.image = newImage;
+                        film.image = image_byte;
                         films.Add(film);
                     }
                 }

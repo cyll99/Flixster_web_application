@@ -39,7 +39,7 @@ namespace Flixster
         public bool video { get; set; }
         public float vote_average { get; set; }
         public int vote_count { get; set; }
-        public Image image { get; set; }
+        public byte[] image { get; set; }
     }
 
     public class Utilities
