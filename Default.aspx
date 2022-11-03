@@ -15,7 +15,9 @@
 <body style="height: 144px">
       <div class="jumbotron text-center">
         
-            <h1 class="display-1" >FLIXSTER</h1>
+            <h1 class="display-1" >FLIXSTER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:Image ID="Image1" runat="server" />
+            </h1>
 
     </div>
     <div>
@@ -38,11 +40,11 @@
      
             <br />
                 </div>
-            <div class="col-lg-8"> <asp:Button ID="btn_precedent" runat="server"  Text="Button" OnClick="btn_precedent_Click" />
+            <div class="col-lg-8"> <asp:Button ID="btn_precedent" runat="server"  Text="Precedent" OnClick="btn_precedent_Click" />
             <br /></div>
            
             <br />
-            <div class="col-lg-8"><asp:Button ID="btn_suivant" runat="server"  Text="Button" OnClick="btn_suivant_Click" />
+            <div class="col-lg-8"><asp:Button ID="btn_suivant" runat="server"  Text="Suivant" OnClick="btn_suivant_Click" />
             <br /></div>
         
                     

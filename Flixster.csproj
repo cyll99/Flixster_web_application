@@ -103,6 +103,8 @@
   <ItemGroup>
     <Content Include="Default.aspx" />
     <Content Include="Detail.aspx" />
+    <Content Include="ressources\blue.png" />
+    <Content Include="ressources\red.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
