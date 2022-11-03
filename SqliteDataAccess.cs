@@ -161,6 +161,16 @@ namespace Flixster
             }
         }
 
+        /// <summary>
+        /// change the color of the icon if there is internet
+        /// </summary>
+        public static void changeColor(System.Web.UI.WebControls.Image  Image1)
+        {
+            if (Utilities.IsConnectedToInternet())
+                Image1.ImageUrl = "~/ressources/blue.png";
+            else
+                Image1.ImageUrl = "~/ressources/red.png";
+        }
 
     }
 

@@ -32,6 +32,7 @@ namespace Flixster
                 lblTitle.Text = currentFilm.title;
                 lblPopularity.Text = Convert.ToString(currentFilm.popularity);
                 Image.ImageUrl = ("https://image.tmdb.org/t/p/w342" + currentFilm.backdrop_path);
+                SqliteDataAccess.changeColor(Image1); // change the icon
             }
             else
             {
@@ -43,12 +44,14 @@ namespace Flixster
                 lblTitle.Text = currentFilm.title;
                 lblPopularity.Text = Convert.ToString(currentFilm.popularity);
                 Image.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(currentFilm.byte_back);
+                SqliteDataAccess.changeColor(Image1); // change the icon
             }
-           
+
 
 
 
         }
+    
         /// <summary>
         /// return film's key to watch on youtube
         /// </summary>

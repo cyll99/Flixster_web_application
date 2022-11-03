@@ -17,7 +17,7 @@ namespace Flixster
         protected void Page_Load(object sender, EventArgs e)
         {
             SqliteDataAccess.CreateIfNotExists();// create the database
-            changeColor();
+            SqliteDataAccess.changeColor(Image1); // change the icon
             // save the films in the datavase
             if (Utilities.IsConnectedToInternet())
             {
@@ -77,24 +77,17 @@ namespace Flixster
         {
             index -= 1;
             afficher(index);
-            changeColor();
+            SqliteDataAccess.changeColor(Image1); // change the icon
         }
 
         protected void btn_suivant_Click(object sender, EventArgs e)
         {
             index += 1;
             afficher(index);
-            changeColor();
+            SqliteDataAccess.changeColor(Image1); // change the icon
         }
 
-        public void changeColor()
-        {
-            if (Utilities.IsConnectedToInternet())
-                Image1.ImageUrl = "~/ressources/blue.png";
-            else
-                Image1.ImageUrl = "~/ressources/red.png";
-        }
-       
+      
 
     }
 }
