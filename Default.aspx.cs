@@ -57,7 +57,7 @@ namespace Flixster
                 Film film = listFilm.ElementAt(index);
                 lbl_title.Text = film.title;
                 label1.Text = film.overview;
-                pictureBox1.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(film.image);
+                pictureBox1.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(film.byte_post);
             }
 
             if (index > 0)

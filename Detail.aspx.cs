@@ -22,15 +22,29 @@ namespace Flixster
             html += "<iframe id='video' src= 'https://www.youtube.com/embed/{0}' width='600' height='300' frameborder='0' allowfullscreen></iframe>";
             html += "</body></html>";
             this.Literal1.Text = string.Format(html, getYoutubeKey());
-
-            lblAverage.Text = Convert.ToString(currentFilm.vote_average);
-            lblCount.Text = Convert.ToString(currentFilm.vote_count);
-            lblDate.Text = currentFilm.release_date;
-            lblOverview.Text = currentFilm.overview;
-            lblLanguage.Text = currentFilm.original_language;
-            lblTitle.Text = currentFilm.title;
-            lblPopularity.Text = Convert.ToString(currentFilm.popularity);
-            Image.ImageUrl = ("https://image.tmdb.org/t/p/w342" + currentFilm.backdrop_path);
+            if (Utilities.IsConnectedToInternet())
+            {
+                lblAverage.Text = Convert.ToString(currentFilm.vote_average);
+                lblCount.Text = Convert.ToString(currentFilm.vote_count);
+                lblDate.Text = currentFilm.release_date;
+                lblOverview.Text = currentFilm.overview;
+                lblLanguage.Text = currentFilm.original_language;
+                lblTitle.Text = currentFilm.title;
+                lblPopularity.Text = Convert.ToString(currentFilm.popularity);
+                Image.ImageUrl = ("https://image.tmdb.org/t/p/w342" + currentFilm.backdrop_path);
+            }
+            else
+            {
+                lblAverage.Text = Convert.ToString(currentFilm.vote_average);
+                lblCount.Text = Convert.ToString(currentFilm.vote_count);
+                lblDate.Text = currentFilm.release_date;
+                lblOverview.Text = currentFilm.overview;
+                lblLanguage.Text = currentFilm.original_language;
+                lblTitle.Text = currentFilm.title;
+                lblPopularity.Text = Convert.ToString(currentFilm.popularity);
+                Image.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(currentFilm.byte_back);
+            }
+           
 
 
 

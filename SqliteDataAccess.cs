@@ -26,7 +26,7 @@ namespace Flixster
             using (IDbConnection cnn = new SQLiteConnection(conn))
             {
 
-                var query = "CREATE TABLE IF NOT EXISTS offline ( id INTEGER, title TEXT, image BLOB, release_date TEXT, original_language TEXT,  vote_count INTEGER, vote_average REAL, popularity REAL, overview	TEXT)";
+                var query = "CREATE TABLE IF NOT EXISTS Films ( id INTEGER, title TEXT, poster BLOB, backdrop BLOB, release_date TEXT, original_language TEXT,  vote_count INTEGER, vote_average REAL, popularity REAL, overview	TEXT)";
 
                 cnn.Execute(query, new DynamicParameters());
             }
@@ -40,7 +40,7 @@ namespace Flixster
             List<Film> films = new List<Film>();
             using (SQLiteConnection cnn = new SQLiteConnection(conn))
             {
-                var query = "select * from offline";
+                var query = "select * from Films";
                 cnn.Open();
 
                 SQLiteCommand sQLiteCommand = new SQLiteCommand(query, cnn);
@@ -58,11 +58,13 @@ namespace Flixster
                         film.overview = (string)sQLiteDataReader["overview"];
                         film.popularity = Convert.ToInt32(sQLiteDataReader["popularity"]);
                         film.vote_average = Convert.ToInt32(sQLiteDataReader["vote_average"]);
-                        byte[] image_byte = (byte[])sQLiteDataReader["image"];
+                        byte[] byte_poster = (byte[])sQLiteDataReader["poster"];
+                        byte[] byte_back = (byte[])sQLiteDataReader["backdrop"];
 
-                        Image newImage = byteArrayToImage(image_byte);
 
-                        film.image = image_byte;
+                        film.byte_post = byte_poster;
+                        film.byte_back = byte_back;
+
                         films.Add(film);
                     }
                 }
@@ -82,16 +84,19 @@ namespace Flixster
             {
                 cnn.Open();
 
-              
+
                 var backdrop = "https://image.tmdb.org/t/p/w342" + film.backdrop_path;
-           
-                byte[] pic = ImageToByte(backdrop, System.Drawing.Imaging.ImageFormat.Jpeg);
+                var post = "https://image.tmdb.org/t/p/w342" + film.poster_path;
+
+                byte[] picBac = ImageToByte(backdrop, System.Drawing.Imaging.ImageFormat.Jpeg);
+                byte[] picPos = ImageToByte(post, System.Drawing.Imaging.ImageFormat.Jpeg);
+
                 string sql = @"
-                        insert into offline (title, overview, image, release_date, vote_count,id,original_language,vote_average,popularity)
-                        Select @title , @overview, @pic, @release_date,@vote_count, @id, @original_language,@vote_average,@popularity
+                        insert into Films (title, overview, poster, backdrop, release_date, vote_count,id,original_language,vote_average,popularity)
+                        Select @title , @overview, @poster, @backdrop, @release_date,@vote_count, @id, @original_language,@vote_average,@popularity
                         Where not exists (
                             select * 
-                            from offline 
+                            from Films 
                             where 
                                 id = @id
                           
@@ -101,7 +106,8 @@ namespace Flixster
                 {
                     cmd.Parameters.AddWithValue("@title", film.title);
                     cmd.Parameters.AddWithValue("@overview", film.overview);
-                    cmd.Parameters.AddWithValue("@pic", pic);
+                    cmd.Parameters.AddWithValue("@poster", picPos);
+                    cmd.Parameters.AddWithValue("@backdrop", picBac);
                     cmd.Parameters.AddWithValue("@release_date", film.release_date);
                     cmd.Parameters.AddWithValue("@vote_count", film.vote_count);
                     cmd.Parameters.AddWithValue("@id", film.id);
