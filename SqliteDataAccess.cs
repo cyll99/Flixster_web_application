@@ -18,7 +18,7 @@ namespace Flixster
 
         static string strExeFilePath = System.Reflection.Assembly.GetExecutingAssembly().Location; // path of the exe file
         static string strWorkPath = System.IO.Path.GetDirectoryName(strExeFilePath); // working directory
-        static string dataFilePath = System.IO.Path.Combine(strWorkPath, "personnes.db"); // path database file
+        static string dataFilePath = System.IO.Path.Combine(strWorkPath, "films.db"); // path database file
 
         static string conn = $"Data Source={dataFilePath};Version=3"; // connection string
         public static void CreateIfNotExists()
@@ -94,12 +94,7 @@ namespace Flixster
                             from offline 
                             where 
                                 id = @id
-                            and overview = @overview
-                            and image = @pic
-                            and release_date = @release_date
-                            and original_language = @original_language
-                            and title = @title
-                            and vote_count = @vote_count
+                          
 )
                         ";
                 using ( var cmd = new SQLiteCommand(sql, cnn))

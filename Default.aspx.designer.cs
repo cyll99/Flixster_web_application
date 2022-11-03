@@ -24,15 +24,6 @@ namespace Flixster
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// pictureBox1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image pictureBox1;
-
-        /// <summary>
         /// lbl_title control.
         /// </summary>
         /// <remarks>
@@ -49,6 +40,15 @@ namespace Flixster
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label label1;
+
+        /// <summary>
+        /// pictureBox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image pictureBox1;
 
         /// <summary>
         /// btn_precedent control.

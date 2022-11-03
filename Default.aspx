@@ -4,25 +4,51 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+     <title>Flisxter</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+     <style type="text/css">
+         .col-lg-6 {
+             width: 395px;
+         }
+     </style>
 </head>
-<body>
+<body style="height: 144px">
+      <div class="jumbotron text-center">
+        
+            <h1 class="display-1" >FLIXSTER</h1>
+
+    </div>
+    <div>
     <form id="form1" runat="server">
-        <a href="Detail.aspx">
-        <asp:Image ID="pictureBox1" runat="server" /></a>
-        <div>
-            <asp:Label ID="lbl_title" runat="server" Text="Label"></asp:Label>
+        <div class="row">
+            <div class="col-lg-12">
+                  <div class="col-lg-12">
+                        <div class="col-lg-6">
+                   <div class="col-lg-6"> <asp:Label ID="lbl_title" runat="server" Text="Label"></asp:Label>
+            <br /></div>
+
+           <div class="col-lg-6"><asp:Label ID="label1" runat="server" Text="Label" Height="120px" Width="392px" style="margin-right: 0px"></asp:Label>
+               <div class="col-lg-6" style="margin-left: 440px"><a href="Detail.aspx">
+        <asp:Image ID="pictureBox1" runat="server" /></a> </div>
+            <br /></div>
+                    </div>
+                  </div>
+              
+                    
+     
             <br />
-            <asp:Label ID="label1" runat="server" Text="Label" Height="120px" Width="500px"></asp:Label>
+                </div>
+            <div class="col-lg-8"> <asp:Button ID="btn_precedent" runat="server"  Text="Button" OnClick="btn_precedent_Click" />
+            <br /></div>
+           
             <br />
-            <br />
-            <asp:Button ID="btn_precedent" runat="server"  Text="Button" />
-            <br />
-            <br />
-            <asp:Button ID="btn_suivant" runat="server"  Text="Button" />
-            <br />
-            <br />
-        </div>
+            <div class="col-lg-8"><asp:Button ID="btn_suivant" runat="server"  Text="Button" OnClick="btn_suivant_Click" />
+            <br /></div>
+        
+                    
+            
+            </div>
     </form>
+         </div>
 </body>
 </html>
