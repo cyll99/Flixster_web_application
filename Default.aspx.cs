@@ -25,6 +25,10 @@ namespace Flixster
                 foreach (Film film in listFilm)
                     SqliteDataAccess.SaveFilm(film);
             }
+            else
+            {
+                listFilm = SqliteDataAccess.LoadFilms();
+            }
             
             afficher(index);
         }
@@ -48,7 +52,7 @@ namespace Flixster
                 SqliteDataAccess.SaveFilm(film);
 
                 lbl_title.Text = film.title;
-                label1.Text = film.overview;
+                lblov.Text = film.overview;
                 pictureBox1.ImageUrl = ("https://image.tmdb.org/t/p/w342" + film.poster_path);
             }
             else
@@ -56,7 +60,7 @@ namespace Flixster
                 listFilm = SqliteDataAccess.LoadFilms();
                 Film film = listFilm.ElementAt(index);
                 lbl_title.Text = film.title;
-                label1.Text = film.overview;
+                lblov.Text = film.overview;
                 pictureBox1.ImageUrl = "data:image/jpeg;base64," + Convert.ToBase64String(film.byte_post);
             }
 

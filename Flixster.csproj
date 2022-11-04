@@ -105,6 +105,10 @@
     <Content Include="Detail.aspx" />
     <Content Include="ressources\blue.png" />
     <Content Include="ressources\red.png" />
+    <Content Include="SplashScreen.aspx" />
+    <Content Include="StyleDefault.css" />
+    <Content Include="StyleDetail.css" />
+    <Content Include="StyleSheet.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +128,13 @@
     </Compile>
     <Compile Include="Film.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.aspx.cs">
+      <DependentUpon>SplashScreen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.aspx.designer.cs">
+      <DependentUpon>SplashScreen.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SqliteDataAccess.cs" />
   </ItemGroup>
   <ItemGroup>

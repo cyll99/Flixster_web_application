@@ -24,15 +24,6 @@ namespace Flixster
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// lblTitle control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle;
-
-        /// <summary>
         /// Image1 control.
         /// </summary>
         /// <remarks>
@@ -40,6 +31,15 @@ namespace Flixster
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image Image1;
+
+        /// <summary>
+        /// lblTitle control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTitle;
 
         /// <summary>
         /// Literal1 control.
@@ -51,6 +51,15 @@ namespace Flixster
         protected global::System.Web.UI.WebControls.Literal Literal1;
 
         /// <summary>
+        /// lblOverview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblOverview;
+
+        /// <summary>
         /// Image control.
         /// </summary>
         /// <remarks>
@@ -60,13 +69,13 @@ namespace Flixster
         protected global::System.Web.UI.WebControls.Image Image;
 
         /// <summary>
-        /// lblOverview control.
+        /// Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOverview;
+        protected global::System.Web.UI.WebControls.Image Image2;
 
         /// <summary>
         /// Label5 control.

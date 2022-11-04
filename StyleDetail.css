@@ -1,0 +1,19 @@
+﻿body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.moviepreview{
+    margin-left: 90px;
+}
+
+.movieCover{
+    margin-top:40px;
+}
