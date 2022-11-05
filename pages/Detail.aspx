@@ -10,8 +10,8 @@
  <link rel="stylesheet" href="StyleDetail.css" />
 </head>
 <body>
+     <asp:Image  class="connectionStatus" ID="Image1" runat="server" />
     <form id="form1" runat="server">
-        <asp:Image ID="Image1" runat="server" />
        
         <div class="main">
            

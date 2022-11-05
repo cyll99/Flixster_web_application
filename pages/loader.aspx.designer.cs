@@ -8,9 +8,9 @@
 //------------------------------------------------------------------------------
 
 
-namespace Flixster
+namespace Flixster.pages
 {
-    public partial class SplashScreen
+    public partial class loader
     {
 
         /// <summary>

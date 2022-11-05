@@ -2,6 +2,8 @@
    display:flex;
    align-items:center;
    justify-content:center;
+   background-color:#000000;
+   color:#ffffff;
    
      
 
@@ -28,11 +30,17 @@ p {
     text-justify: inter-word;
 }
 
-.navbar li {
-    display: flex;
-    float: left;
-    text-align: justify;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
+.connectionStatus{
+    position: absolute;
+    top:0;
+    right:0;
+    margin:35px;
+}
+
+h2{
+    color:#ffd800;
+}
+
+.main{
+    margin-top:80px;
 }

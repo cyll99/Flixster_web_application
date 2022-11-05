@@ -11,19 +11,9 @@
  
 </head>
 <body>
+        <asp:Image class="connectionStatus" ID="Image1" runat="server" />
+
     <form id="form1" runat="server">
-
-             <div class="navbar">
-                 <ul>
-                     <li>
-                          <div>
-                            <asp:Image ID="Image1" runat="server" />
-                         </div>
-                     </li>
-                 </ul>
- 
-            </div>
-
 
             <br/>
 
@@ -33,10 +23,10 @@
             <div class="col-lg-6">
                  <div class="contentsDetails">
                         <h2><asp:Label ID="lbl_title" runat="server" Text="Label"></asp:Label></h2>
-                        <asp:Label ID="label1" runat="server" Text="Label" Height="120px" Width="392px" style="margin-right: 0px"></asp:Label>
+                        <asp:Label ID="lbl_overview" runat="server" Text="Label" Height="120px" Width="392px" style="margin-right: 0px"></asp:Label>
                         <br/>
                    <div class="buttons">
-                        <asp:Button  class="btn btn-dark" ID="btn_precedent" runat="server"  Text="Precedent" OnClick="btn_precedent_Click" />
+                        <asp:Button  class="btn btn-warning"  ID="btn_precedent" runat="server"  Text="Precedent" OnClick="btn_precedent_Click" />
                         <br />
                         <asp:Button class="btn btn-warning"  ID="btn_suivant" runat="server"  Style="margin-left:30px;" Text="Suivant" OnClick="btn_suivant_Click" />
                    </div>

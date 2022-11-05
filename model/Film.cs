@@ -6,11 +6,7 @@ using System.Net.NetworkInformation;
 using System.Text.Json;
 
 namespace Flixster
-{/// <summary>
-/// Nom : LAROSE
-/// Prenom : Christ-Yan Love
-/// Date : 13/10/2022
-/// </summary>
+{
     public class Film
     {
         private string adult { get; set; }
